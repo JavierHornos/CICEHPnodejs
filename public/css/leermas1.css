@@ -131,23 +131,47 @@
 
 
 
-	.actividades{
+	.publicaciones{
 		background-color: #fafafa;
 		padding-left: 20px;
 		padding-top: 20px;
+		padding: 15px 9%;
+		padding-bottom: 100px;
 	}
 
-	.fotos{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: center;
-		background-color: #FADBD8;
-		
-		
+	.publicaciones .titulo {
+		text-align: center;
+		padding-bottom: 15px;
+		color: black;
+		text-shadow: 0 5px 10px rgba(0,0,0,.2);
+		font-size: 50px;
 
-		
 	}
+
+	.publicaciones .box-publicaciones{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+		gap:15px;
+
+	}
+
+	.publicaciones .box-publicaciones .box{
+		box-shadow: 0 5px 10px rgba(0,0,0,.2);
+		border-radius: 5px;
+		background-color: grey;
+		text-align: center;
+		padding: 30px 20px;
+
+	}
+
+	.publicaciones .box-publicaciones .box a {
+		text-decoration: none;
+		color: blue;
+	}
+
+
+
+
 
 
 /*:::::Pie de Pagina*/

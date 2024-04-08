@@ -20,6 +20,22 @@ const controlador = {
     res.render('investigaciones')
    },
 
+   leermas: (req, res) => {
+    res.render('leermas')
+   },
+
+   leermas2: (req, res) => {
+    res.render('leermas2')
+   },
+
+   leermas3: (req, res) => {
+    res.render('leermas3')
+   },
+
+   leermas4: (req, res) => {
+    res.render('leermas4')
+   },
+
    docencia: (req, res) => {
     res.render('docencia')
    }
