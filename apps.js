@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const path = require('path')
+
 const mainRoutes = require('./src/routers/mainRoutes');
 
 
@@ -11,6 +13,9 @@ app.listen(PORT, function() {
 
 
 //CARPETAS 
+app.use(express.static(path.join(__dirname, 'plubic')));
+app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(__dirname +'/views'));
 app.use(express.static('public'));                    //public
 app.set('views', './src/views');                      //views
 app.set('view engine', 'ejs')                         //ejs

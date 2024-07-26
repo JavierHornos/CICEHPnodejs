@@ -27,7 +27,7 @@
 		height: 100px;
 		position: absolute;
 		top: 0;left: 0;
-		background-color: #fafafa;
+		background-color: white;
 	}
 	.container {
 		width: 90%;
@@ -37,7 +37,7 @@
 	}
 	.container .btn-menu, .logo{
 		float: left;
-		line-height:80px;
+		line-height:100px;
 	
 	}
 	.container .btn-menu label{
@@ -151,6 +151,12 @@
 
 
 /*:::::Pie de Pagina*/
+.undav{
+	margin-left: 10px;
+	margin-bottom: 15px;
+}
+
+
 .pie-pagina{
     width: 100%;
     background-color: #0a141d;
