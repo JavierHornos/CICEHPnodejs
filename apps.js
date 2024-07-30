@@ -2,6 +2,39 @@ const express = require("express");
 const app = express();
 const path = require('path')
 
+
+
+const methodOverride =  require('method-override');
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+
+const session = require('express-session');                     // express-session
+const MemoryStore = require('memorystore')(session)
+app.use(session({
+   cookie: { maxAge: 86400000 },
+   store: new MemoryStore({
+     checkPeriod: 86400000 // prune expired entries every 24h
+   }),
+   resave: false,
+   saveUninitialized: false, 
+   secret: 'secreto'
+}))
+
+const cookieParser = require('cookie-parser');                  //cookie parser
+app.use(cookieParser());
+
+const cors = require('cors');
+app.use(cors())
+
+app.use(express.urlencoded({ extended: false }));  // necesario para recibir la info que viaja en un formulario
+app.use(express.json());
+
+
+
+
+
+
+
+
 const mainRoutes = require('./src/routers/mainRoutes');
 
 
@@ -32,3 +65,7 @@ app.use('/leermas2', mainRoutes)
 app.use('/leermas3', mainRoutes)
 app.use('/leermas4', mainRoutes)
 app.use('/docencia', mainRoutes)
+
+app.use('*', function(req, res) {
+   res.render("./error-404")
+});

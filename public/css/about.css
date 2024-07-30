@@ -141,7 +141,8 @@
 /*:::::Pie de Pagina*/
 .undav{
 	margin-left: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
+	width: 127px !important
 }
 
 .pie-pagina{
@@ -200,6 +201,12 @@
 .pie-pagina .grupo-2 small{
     font-size: 15px;
 }
+
+.grupo-2 a{
+	text-decoration: none !important;
+	color: #fff;
+}
+
 @media screen and (max-width:800px){
     .pie-pagina .grupo-1{
         width: 90%;
