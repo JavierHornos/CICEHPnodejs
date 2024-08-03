@@ -1,5 +1,13 @@
+//const db = require('../database/models');
+//db.usuarios.findAll().then((listaUsuarios) =>{
+//    console.log(listaUsuarios)
+//    });
+
+
+
 const controlador = {
-    
+
+       
     home: (req, res) => {
         res.render('home') ;
    },

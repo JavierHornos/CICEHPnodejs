@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Actividades</title>
-	<link href="/css/docencia.css" rel="stylesheet">
+	<title>Acerca</title>
+	<link href="/css/login.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	 <!--Iconos-->
-	 <script src="https://kit.fontawesome.com/fa3a2d0319.js" crossorigin="anonymous"></script>
+	 <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header class="header">
@@ -22,7 +22,7 @@
 				<a href="/actividades">Actividades</a>
 				<a href="/publicaciones">Publicaciones</a>
 				<a href="/investigaciones">Investigación</a>
-				<a href="/docencia">Docencia</a>
+				<a href="#">Docencia</a>
 			</nav>
 		</div>
 	</header>
@@ -49,68 +49,51 @@
 
 
 
-
-<main class="actividades">
-	<div>
-		<strong>Historia de la Arquitectura I-IV. Cátedra Petrina</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/xxxx" Target="_blank">https://www.instagram.com/xxxx</a>
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Fundamentos de la Arquitectura Contemporánea. Taller Carranza</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/fac.taller_carranza/" Target="_blank">https://www.instagram.com/fac.taller_carranza/</a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Historia de la Arquitectura IV. Taller Carranza.</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/historia4.taller_carranza/" Target="_blank">https://www.instagram.com/historia4.taller_carranza/</a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Teoría de la Arquitectura. Taller Carranza.</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/teoria.taller_carranza/ " Target="_blank">https://www.instagram.com/teoria.taller_carranza/ </a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Historia de la Vivienda Social en Argentina. Taller Longoni</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/xxxx" Target="_blank">https://www.instagram.com/xxxx</a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-		
-		
+<% if (typeof errors != 'undefined') { %>
+	<p style="color:red">ERROR</p>
+	<ul>
+		<% for (let i =0; i < errors.length; i++) { %>
+			<li>
+				<p style="color:red"><%= errors[i].msg %></p>
+				
+			</li>
+		<% } %>    
+	</ul>
+<% } %>
 
 
-		
-	</div>
-<br><br/>
-<br><br/>
 
+<main class="formulario">
+
+        
+
+
+    <form action="/users/login" id="formulario" class="form-box animate__animated animate__pulse" method="POST">
+        <h1 class="form-title">Ingresar</h1>
+        <input type="Email" placeholder="email" name="Email" id="Email">
+        <% if (locals.errors && errors.email) { %>
+               <p style="color:red"><%= errors.email.msg %></p>
+                   
+            <% } %> 
+        <input type="Password" placeholder="Password" name="Password" id="Password">
+        <% if (locals.errors && errors.password) { %>
+            <p style="color:red"><%= errors.password.msg %></p>
+                
+         <% } %> 
+        <a href="../users/registro"><label class="sinContrasena">¿No tenés Cuenta?</label> </a>
+           <br>
+           <br>
+           <label for="recordame">Recordame</label>
+         <input type="checkbox" name="recordame" id="recordame"> <br>              
+        <button type="submit" value="login">
+           Ingresá
+        </button>
+      </form>
+    
 
 </main>
+
+
 
 
 <!--::::Pie de Pagina::::::-->
@@ -139,7 +122,7 @@
 		</div>
 	</div>
 	<div class="grupo-2">
-		<small>&copy; 2024 <b>CICEHP</b> - Todos los Derechos Reservados.</small>
+		<small><a href="#">&copy;</a> 2024 <b>CICEHP</b> - Todos los Derechos Reservados.</small>
 	</div>
 </footer>
 
@@ -147,6 +130,10 @@
 
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/validacion-Login.js"></script>
+
 
 
 </body>

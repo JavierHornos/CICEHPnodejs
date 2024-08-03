@@ -25,6 +25,7 @@ app.use(cookieParser());
 const cors = require('cors');
 app.use(cors())
 
+
 app.use(express.urlencoded({ extended: false }));  // necesario para recibir la info que viaja en un formulario
 app.use(express.json());
 
@@ -65,6 +66,9 @@ app.use('/leermas2', mainRoutes)
 app.use('/leermas3', mainRoutes)
 app.use('/leermas4', mainRoutes)
 app.use('/docencia', mainRoutes)
+
+const usersRouters = require('./src/routers/userRoutes');
+app.use('/users', usersRouters);
 
 app.use('*', function(req, res) {
    res.render("./error-404")
