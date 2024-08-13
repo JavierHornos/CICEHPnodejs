@@ -130,7 +130,6 @@
 	/*Fin de Menù lateral*/
 
 
-
 	.publicaciones{
 		background-color: #fafafa;
 		padding-left: 20px;
@@ -150,12 +149,12 @@
 
 	.publicaciones .box-publicaciones{
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+		grid-template-rows: repeat(auto-fit, minmax(270px, 1fr));
 		gap:15px;
 
 	}
 
-	.publicaciones .box-publicaciones .box{
+	.publicaciones .box-publicaciones{
 		box-shadow: 0 5px 10px rgba(0,0,0,.2);
 		border-radius: 5px;
 		background-color: grey;
@@ -163,14 +162,6 @@
 		padding: 30px 20px;
 
 	}
-
-	.publicaciones .box-publicaciones .box a {
-		text-decoration: none;
-		color: blue;
-	}
-
-
-
 
 
 

@@ -57,6 +57,9 @@ const er = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/
          } else {
 
           formulario.submit();                              // hacemos submit al formulario
+          window.onload = function() {
+            window.location.reload();
+        };
           
          } 
  });

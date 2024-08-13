@@ -21,11 +21,21 @@
 				<a href="/"><h1><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710217659/Logo_Final_gn1hat.png" width="115px"></h1></a>
 			</div>
 			<nav class="menu">
+				<% if (!locals.isLogged) { %>
 				<a href="/about">Sobre CICEHP</a>
 				<a href="/actividades">Actividades</a>
 				<a href="/publicaciones">Publicaciones</a>
 				<a href="/investigaciones">Investigación</a>
 				<a href="/docencia">Docencia</a>
+				<% } else { %>
+				<a href="/about">Sobre CICEHP</a>
+				<a href="/actividades">Actividades</a>
+				<a href="/publicaciones">Publicaciones</a>
+				<a href="/investigaciones">Investigación</a>
+				<a href="/docencia">Docencia</a>
+				<a href="/users/perfil">Perfil</a>
+				<a href="/users/creacion-producto">Crear</a>
+				<% } %>
 			</nav>
 		</div>
 	</header>
@@ -48,23 +58,27 @@
 
 
 <main>
+
+	
+
+	
 	<div class="carousel" data-flickity='{ "autoPlay": true }'>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650278/1_o6wiqm.jpg)" alt="Foto uno"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650347/2_tsfecx.jpg)" alt="Foto dos"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650368/3_uqzklr.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650413/4_ntrgp5.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650454/5_peos4q.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650494/6_rezndg.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650519/7_cm5izt.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650539/8_uahdfb.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650559/9_nmu73a.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650585/10_lrol6v.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650606/11_iklrfu.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650636/12_fqskql.jpg)"></div>
-		<div class="carousel-cell" style="background-image: url(https://res.cloudinary.com/df4wfmkk1/image/upload/v1710650636/12_fqskql.jpg)"></div>
+		<% for(let p of soloActividades) { %> 
+		<div class="carousel-cell" style="background-image: url(<%=p.imagenes%>)">
+			<div class="carousel-caption">
+				<h2>Tema: <%=p.tema%></h2>
+				<h3>Nombre: <%=p.nombre%></h3>
+				<p>Fuente: <%=p.fuente%></p>
+			  </div>	
+			  	
+		</div>
+
+		<% } %>	
 		
-		
+
 	</div>
+
+	
 
 	
 <br><br/>

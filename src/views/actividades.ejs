@@ -18,11 +18,21 @@
 				<a href="/"><h1><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710217659/Logo_Final_gn1hat.png" width="115px"></h1></a>
 			</div>
 			<nav class="menu">
+				<% if (!locals.isLogged) { %>
 				<a href="/about">Sobre CICEHP</a>
 				<a href="/actividades">Actividades</a>
 				<a href="/publicaciones">Publicaciones</a>
 				<a href="/investigaciones">Investigación</a>
 				<a href="/docencia">Docencia</a>
+				<% } else { %>
+				<a href="/about">Sobre CICEHP</a>
+				<a href="/actividades">Actividades</a>
+				<a href="/publicaciones">Publicaciones</a>
+				<a href="/investigaciones">Investigación</a>
+				<a href="/docencia">Docencia</a>
+				<a href="/users/perfil">Perfil</a>
+				<a href="/users/creacion-producto">Crear</a>
+				<% } %>
 			</nav>
 		</div>
 	</header>
@@ -48,153 +58,46 @@
 <br><br/>
 
 
-
-
 <main class="actividades">
+	
+
+	<% for(let p of soloActividades) { %> 
+	
 	<div>
-		<strong>Seminario y muestra “Debates e itinerarios acerca de la autoconstrucción en la Argentina”, dentro del Proyecto UNDAVCYT 2019 “La obra de Hilario Zalba en el Instituto de Vivienda de la Provincia de Buenos Aires (1958-1962). Progamas, teoría y puesta en valor”.</strong>
-		<br><br/>
-		<p>Presentación a cargo de Martín Carranza y Lucas Longoni.
-			Ponencias a cargo de Juan Santiago Palero, “Participación en arquitectura de vivienda social. La propuesta teórica de Turner y su continuidad en el PREVI”; Claudio Labra, “El sistema ATEPAM. Primeros ensayos en la asimilación estatal de los procesos de autoconstrucción”; Alejandro Gregoric, “Sistemas de vivienda UNNE-UNO, prototipo universitario aplicado a la vivienda modular”; Martín Carranza, “El caso del Plan Piloto de Realojamiento para Villa 7 en el barrio de Mataderos”; Lucas Longoni, “La experiencia del cooperativismo en el conjunto Monteagudo”. 
-			UNDAV, Sede Piñeyro, noviembre 2022.
-			</p>
-		<br><br/>
-		<div class="fotos">
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551332/Foto1_r0hfuf.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551332/Foto1_r0hfuf.jpg" alt="1" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551390/Foto2_hk1k7g.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551390/Foto2_hk1k7g.jpg"  alt="2" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551422/Foto_3_kwv1ii.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551422/Foto_3_kwv1ii.jpg"  alt="3" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551455/Foto_4_apsqpl.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551455/Foto_4_apsqpl.jpg"  alt="4" width="35px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551493/Foto5_wilgn5.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551493/Foto5_wilgn5.jpg"  alt="5" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551532/Foto6_nbhk48.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551532/Foto6_nbhk48.jpg"  alt="6" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551603/Flyer_final_Seminario_1NOV22_ek5x9g.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551603/Flyer_final_Seminario_1NOV22_ek5x9g.jpg"  alt="Fleyer" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551647/LAMINA_PARTICIPACI%C3%93N_-_copia_mc5lcm.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551647/LAMINA_PARTICIPACI%C3%93N_-_copia_mc5lcm.jpg"  alt="Lamina 1" width="18px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551797/2_-_ATEPAM_Lamina_60x210_-_copia_oup4nb.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551797/2_-_ATEPAM_Lamina_60x210_-_copia_oup4nb.jpg"  alt="Lamina 2" width="18px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551956/3_-_MONTEAGUDO_Lamina_60x210_-_copia_iby11c.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712551956/3_-_MONTEAGUDO_Lamina_60x210_-_copia_iby11c.jpg"  alt="Lamina 3" width="18px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712552004/4-_UNNE-UNO_Lamina_60x210_-_copia_kfhmzt.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712552004/4-_UNNE-UNO_Lamina_60x210_-_copia_kfhmzt.jpg"  alt="Lamina 4" width="18px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712552032/5_-_Justo_Suarez_Lamina_60x210_1_-_copia_pmbeki.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1712552032/5_-_Justo_Suarez_Lamina_60x210_1_-_copia_pmbeki.jpg"  alt="Lamina 5" width="18px" ></a>
-		</div>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Semana Nacional de la Ciencia y la Tecnología UNDAV 2022</strong>
+		<strong><%=p.titulo%> </strong>
 		<br><br/>
 		<p>
-		  Presentaciones a cargo de Martín Carranza y Lucas Longoni. Mesa Redonda: “¿Cómo es investigar en Arquitectura?”. Apertura y cierre a cargo del Decano Prof. Jaime Sorín. UNDAV, Sede Piñeyro, septiembre 2022.
+			<%=p.descripcion%>  
+	   </p>
+	   <br><br/>
+	   <br><br/>
 
-		</p>
-		<br><br/>
-		<div class="fotos">
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223481/Flyer_hoqpyq.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223481/Flyer_hoqpyq.jpg" alt="1" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223520/Foto1_aj9h3f.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223520/Foto1_aj9h3f.jpg"  alt="2" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223554/Foto2_yeklr5.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223554/Foto2_yeklr5.jpg"  alt="3" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223582/Foto3_irbjro.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223582/Foto3_irbjro.jpg"  alt="4" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223582/Foto3_irbjro.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710223582/Foto3_irbjro.jpg"  alt="5" width="50px" ></a>
-		</div>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-		<strong>XXXVI Jornadas de Investigación XVIII Encuentro Regional SI FADU</strong>
-		<br><br/>
-		<p>
-			Ponencia “Debates e itinerarios acerca de la autoconstrucción de vivienda en la Argentina. 1956-1975”, en relación al Proyecto UNDAVCYT 2019 “La obra de Hilario Zalba en el Instituto de Vivienda de la Provincia de Buenos Aires (1956-1962). Programas, teoría y puesta en valor”.
-			FADU UBA, Ciudad Universitaria, octubre de 2022.
-		</p>
-		<br><br/>
-		<hr><hr/>
+	   <div class="fotos">
+		<% if (p.imagenes && Array.isArray(p.imagenes)) { %>
+		  <% for(let imagen of p.imagenes) { %>
+			<a href="<%=imagen%>" target="_blank">
+			  <img src="<%=imagen%>" alt="Imagen no disponible" width="50px">
+			</a>
+		  <% } %>
+		<% } else { %>
+		  <p>No hay imágenes disponibles</p>
+		<% } %>
+	  </div>
 
-		<br><br/>
-		<strong>Muestra Historia de la Vivienda Social en Argentina.</strong>
-		<br><br/>
-		<p>
-			PAsociada al Proyecto UNDAVCYT 2017 “La obra de Hilario Zalba en el Instituto de Vivienda de la
-			UNDAV, Sede Piñeyro, noviembre 2019.
-			
-		</p>
-		<br><br/>
-		<div class="fotos">
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222363/A_jvrqfs.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222363/A_jvrqfs.jpg" alt="1" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222721/B_buyppb.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222721/B_buyppb.jpg"  alt="2" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222752/C_txsuaz.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222752/C_txsuaz.jpg"  alt="3" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222774/D_q4fciy.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222774/D_q4fciy.jpg"  alt="4" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222811/E_hnkysh.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222811/E_hnkysh.jpg"  alt="5" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222862/F_dd0p5b.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222862/F_dd0p5b.jpg"  alt="6" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222896/G_f2mxpg.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222896/G_f2mxpg.jpg"  alt="7" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222922/H_lnxmcg.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710222922/H_lnxmcg.jpg"  alt="8" width="50px" ></a>
-		</div>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-
-		<strong>Semana de la Ciencia y la Tecnología UNDAV 2019.</strong>
-		<br><br/>
-		<p>
-			Presentación a cargo de Lucas Longoni del proyecto “La obra de Hilario Zalba en el Instituto de Vivienda de la provincia de Buenos Aires (1956-1962). Programas, teoría y puesta en valor. 
-			Presentación a cargo de Martin Carranza del proyecto “Avellaneda Blues. Relatos polifónicos y arqueología industrial". 
-			UNDAV, Sede Piñeyro, septiembre 2019.
-		</p>
-		<br><br/>
-		<div class="fotos">
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710224016/Foto1_pgjhre.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710224016/Foto1_pgjhre.jpg" alt="1" width="50px" ></a>
-		<a href="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710224045/Foto2_thqzah.jpg" Target="_blank"><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710224045/Foto2_thqzah.jpg"  alt="2" width="50px" ></a>
-		</div>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>XXXIII Jornadas de Investigación XV Encuentro Regional SI FADU</strong>
-		<br><br/>
-		<p>
-			Ponencia “La vivienda como signo. Imágenes sobre el Block Prototipo de Hilario Zalba”, asociada al Proyecto UNDAVCYT 2017 “La obra de Hilario Zalba en el Instituto de Vivienda de la Provincia de Buenos Aires (1956-1962). Programas, teoría y puesta en valor”.
-             publicada en actas de las XXXIII Jornadas de Investigación XV Encuentro Regional SI FADU, noviembre de 2019.
-
-			
-		</p>
-		<br><br/>
-		<hr><hr/>
-
-		<br><br/>
-
-		<strong>Entrevista a Martín Carranza (2017)</strong>
-		<br><br/>
-		<p>
-			En el informativo semanal realizado por UNDAV TV y estudiantes de Periodismo de la UNDAV para el programa 7 PUENTES. PROGRAMA Nº13 presentando el Proyecto de Investigación acreditado por el PRIICA/UNDAV denominado “AVELLANEDA BLUES. Arqueología industrial y relatos polifónicos”. 
-         Recuperado en sitio: <a href="https://www.youtube.com/watch?v=URO-UPteqFs" Target="_blank">https://www.youtube.com/watch?v=URO-UPteqFs</a>	
-		</p>
-		<br><br/>
-		<hr><hr/>
-
-		<br><br/>
-
-		<strong>Entrevista a Martín Carranza (2017)</strong>
-		<br><br/>
-		<p>
-			en el documental "Del Mercado a la Universidad" que refleja el fenómeno de transformación que sobrellevó al antiguo edificio del "Mercado de Abasto y Frigorífico de Avellaneda", que hoy alberga en la denominada "Sede España" de la "Universidad Nacional de Avellaneda". Realizado como Trabajo Final Integrador de la Especialización en Comunicación Digital Audiovisual de la Universidad Nacional de Quilmes (UNQ). 
-            Tutor Mg. Néstor Daniel Gonzales. Fecha: 2019-09-17 Autor: Esp. Casaballe, Matías Federico Recuperado en sitio: <a href="https://www.youtube.com/watch?v=-UIwHQH4O0Y&t=231s" Target="_blank">https://www.youtube.com/watch?v=-UIwHQH4O0Y&t=231s</a>
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-
-		<br><br/>
-
-		<strong>Producto audiovisual elaborado por Martín Carranza (2017)</strong>
-		<br><br/>
-		<p>
-			denominado “AVELLANEDA BLUES. Arqueología industrial y relatos polifónicos” Recuperado en sitio: <a href="https://www.youtube.com/watch?v=BfRVR-GIgFA" Target="_blank">https://www.youtube.com/watch?v=BfRVR-GIgFA</a>
-		</p> 
-		<br><br/>
-		<hr><hr/>
-
-
+	   <br><br/>
+	   <hr><hr/>
+	   <br><br/>
+	   
+	   <% } %> 
 		
 	</div>
+	
 <br><br/>
 <br><br/>
 
 
 </main>
+
 
 
 <!--::::Pie de Pagina::::::-->

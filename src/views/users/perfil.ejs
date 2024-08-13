@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Acerca</title>
+	<title>Perfil</title>
 	<link href="/css/perfil.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	 <!--Iconos-->
-	 <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+	 <script src="https://kit.fontawesome.com/fa3a2d0319.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<header class="header">
@@ -18,12 +18,22 @@
 				<a href="/"><h1><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710217659/Logo_Final_gn1hat.png" width="115px"></h1></a>
 			</div>
 			<nav class="menu">
+				<% if (!locals.isLogged) { %>
 				<a href="/about">Sobre CICEHP</a>
 				<a href="/actividades">Actividades</a>
 				<a href="/publicaciones">Publicaciones</a>
 				<a href="/investigaciones">Investigación</a>
-				<a href="#">Docencia</a>
-			</nav>
+				<a href="/docencia">Docencia</a>
+				<% } else { %>
+				<a href="/about">Sobre CICEHP</a>
+				<a href="/actividades">Actividades</a>
+				<a href="/publicaciones">Publicaciones</a>
+				<a href="/investigaciones">Investigación</a>
+				<a href="/docencia">Docencia</a>
+				<a href="/users/creacion-producto">Crear</a>
+				<% } %>
+			</nav>	
+
 		</div>
 	</header>
 	<div class="capa"></div>

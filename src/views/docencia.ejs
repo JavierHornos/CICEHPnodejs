@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Actividades</title>
+	<title>Docencia</title>
 	<link href="/css/docencia.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	 <!--Iconos-->
@@ -18,11 +18,21 @@
 				<a href="/"><h1><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710217659/Logo_Final_gn1hat.png" width="115px"></h1></a>
 			</div>
 			<nav class="menu">
+				<% if (!locals.isLogged) { %>
 				<a href="/about">Sobre CICEHP</a>
 				<a href="/actividades">Actividades</a>
 				<a href="/publicaciones">Publicaciones</a>
 				<a href="/investigaciones">Investigación</a>
 				<a href="/docencia">Docencia</a>
+				<% } else { %>
+				<a href="/about">Sobre CICEHP</a>
+				<a href="/actividades">Actividades</a>
+				<a href="/publicaciones">Publicaciones</a>
+				<a href="/investigaciones">Investigación</a>
+				<a href="/docencia">Docencia</a>
+				<a href="/users/perfil">Perfil</a>
+				<a href="/users/creacion-producto">Crear</a>
+				<% } %>
 			</nav>
 		</div>
 	</header>
@@ -51,60 +61,33 @@
 
 
 <main class="actividades">
-	<div>
-		<strong>Historia de la Arquitectura I-IV. Cátedra Petrina</strong>
+	<div class="box-actividades">
+		<% for(let p of soloDocencia) { %> 
+		<br>
+		<strong><%=p.titulo%></strong>
 		<br><br/>
 		<p>
-			IG: <a href="https://www.instagram.com/xxxx" Target="_blank">https://www.instagram.com/xxxx</a>
 		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Fundamentos de la Arquitectura Contemporánea. Taller Carranza</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/fac.taller_carranza/" Target="_blank">https://www.instagram.com/fac.taller_carranza/</a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Historia de la Arquitectura IV. Taller Carranza.</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/historia4.taller_carranza/" Target="_blank">https://www.instagram.com/historia4.taller_carranza/</a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Teoría de la Arquitectura. Taller Carranza.</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/teoria.taller_carranza/ " Target="_blank">https://www.instagram.com/teoria.taller_carranza/ </a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
-
-		<strong>Historia de la Vivienda Social en Argentina. Taller Longoni</strong>
-		<br><br/>
-		<p>
-			IG: <a href="https://www.instagram.com/xxxx" Target="_blank">https://www.instagram.com/xxxx</a>  
-
-		</p>
-		<br><br/>
-		<hr><hr/>
-		<br><br/>
 		
+		<%=p.descripcion%> <a href=<%=p.link%> Target="_blank"><%=p.link%></a>
+
+		<br><br/>
+		<br>
+				<% if (locals.isLogged) { %>
+
+			<a href="./detalle-docencia-admin/<%= p.Id %>" style="align-items:center"> 
+			<input class="detalle-docencia" type="button" value="Detalle">
+			</a>
+					<% } else { %>	
+				
+						<% } %>
+		<br><br/>
+		<hr><hr/>
+
+		<% } %> 
+
 		
 
-
-		
 	</div>
 <br><br/>
 <br><br/>

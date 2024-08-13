@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Publicaciones</title>
-	<link href="/css/publicaciones.css" rel="stylesheet">
+	<title>Docencia</title>
+	<link href="/css/docencia.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	 <!--Iconos-->
 	 <script src="https://kit.fontawesome.com/fa3a2d0319.js" crossorigin="anonymous"></script>
@@ -60,32 +60,43 @@
 
 
 
-<main class="publicaciones">
-
-	
-
-	<div class="box-publicaciones">
-		<% for(let p of soloPublicaciones) { %> 
-
-		<div class="box">
-		<strong><%=p.titulo%> </strong>
+<main class="actividades">
+	<div class="box-actividades">
+		
+		<br>
+		<strong><%= investigacionDetallado.titulo %></strong>
 		<br><br/>
 		<p>
-			<%=p.descripcion%>  
-			<a href=<%=p.link%> Target="_blank"><%=p.link%></a>
 		</p>
 		
+		<%= investigacionDetallado.descripcion%> <a href=<%= investigacionDetallado.link%> Target="_blank"><%= investigacionDetallado.link%> </a>
+
+		<br><br/>
 		<br><br/>
 		
+				<% if (locals.isLogged) { %>
+
+			<a href="../editar-docencia/<%= investigacionDetallado.Id %>" style="align-items:center"> 
+			<input class="detalle-docencia" type="button" value="Edtiar">
+			</a>
+
+			<form action="/detalle-docencia-admin/<%= investigacionDetallado.Id %>?_method=DELETE" method="POST" style="display: inline-flex" id="borrado">
+				<button type="submit" id="boton-borrado" class="detalle-docencia">Eliminar</button>
+			</form>
+					<% } else { %>	
+				
+						<% } %>
+		<br><br/>
 		<br><br/>
 		<hr><hr/>
-		<br><br/>
+
 		
-		<% } %> 
-		</div>	
+
 		
 
 	</div>
+<br><br/>
+<br><br/>
 
 
 </main>
@@ -104,7 +115,7 @@
 		</div>
 		<div class="box">
 			
-		
+			
 		</div>
 		<div class="box">
 			<h2>SIGUENOS</h2>
@@ -125,6 +136,8 @@
 
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/borrar-docencia.js"></script>
 
 
 </body>

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Publicaciones</title>
+	<title>Investigación</title>
 	<link href="/css/investigaciones.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	 <!--Iconos-->
@@ -18,11 +18,21 @@
 				<a href="/"><h1><img src="https://res.cloudinary.com/df4wfmkk1/image/upload/v1710217659/Logo_Final_gn1hat.png" width="115px"></h1></a>
 			</div>
 			<nav class="menu">
+				<% if (!locals.isLogged) { %>
 				<a href="/about">Sobre CICEHP</a>
 				<a href="/actividades">Actividades</a>
 				<a href="/publicaciones">Publicaciones</a>
 				<a href="/investigaciones">Investigación</a>
 				<a href="/docencia">Docencia</a>
+				<% } else { %>
+				<a href="/about">Sobre CICEHP</a>
+				<a href="/actividades">Actividades</a>
+				<a href="/publicaciones">Publicaciones</a>
+				<a href="/investigaciones">Investigación</a>
+				<a href="/docencia">Docencia</a>
+				<a href="/users/perfil">Perfil</a>
+				<a href="/users/creacion-producto">Crear</a>
+				<% } %>
 			</nav>
 		</div>
 	</header>
@@ -55,90 +65,25 @@
 
 	<div class="box-publicaciones">
 
+		<% for(let p of soloInvestigacion) { %> 
+
 		<div class="box">
-		<strong>UNDAVCYT 2019/ 2022</strong>
+		<strong><%=p.titulo%> </strong>
 		<br><br/>
 		<p>
-			Proyecto “La obra de Hilario Zalba en el Instituto de Vivienda de la Provincia de Buenos Aires (1956-1962). Programas, teoría y puesta en valor”. 
-			Departamento de Arquitectura, Diseño y Urbanismo (DADU-UNDAV). CEHP.
-			Director: Lucas Longoni. 
-			Codirector: Martín Carranza
+			<%=p.descripcion%> 
 		</p>
-		<br><br/>
-		<span> <a href="/leermas">Leer + </a> </span>
-		<br><br/>
-		<br><br/>
+		
 		
 		<br><br/>
+		<span> <a href="./leermas/<%= p.Id %>">Leer + </a> </span>
+		<br><br/>
+		<br><br/>
+		<hr><hr/>
+		<br><br/>
+		<% } %> 
 		</div>
 
-		<div class="box">
-			<strong>UNDAVCYT 2017/ 2018</strong>
-			<br><br/>
-			<p>
-				Proyecto “La obra de Hilario Zalba en el Instituto de Vivienda de la Provincia de Buenos Aires (1956-1962). Programas, teoría y puesta en valor”. 
-				Departamento de Arquitectura, Diseño y Urbanismo (DADU-UNDAV). CEHP.
-				Director: Lucas Longoni. 
-
-			</p>
-			<br><br/>
-			<span> <a href="/leermas2">Leer + </a> </span>
-			<br><br/>
-			<br><br/>
-			
-			<br><br/>
-			</div>
-
-			<div class="box">
-				<strong>PRIICA 2016/ 2017</strong>
-				<br><br/>
-				<p>
-					Proyecto “Avellaneda blues. Arqueología industrial y relatos polifónicos”. 
-					Departamento de Arquitectura, Diseño y Urbanismo (DADU-UNDAV). CEHP. 
-					Director: Martin Carranza 
-
-	
-				</p>
-				<br><br/>
-				<span> <a href="/leermas3">Leer + </a> </span>
-				<br><br/>
-				<br><br/>
-				
-				<br><br/>
-				</div>
-
-				<div class="box">
-					<strong>Teoría, Historia y Critica de la Arquitectura (THCA)</strong>
-					<br><br/>
-					<p>
-						Grupo de investigación sobre arquitectura moderna producida en los partidos y localidades del Gran Buenos Aires entre las décadas de 1930 y 1970
-						Recuperado en sitio: <a href="https://www.instagram.com/conurbanomoderno/" Target="_blank">https://lc.cx/k8Wv8F</a> 
-
-	
-		
-					</p>
-					<br><br/>
-					<span> <a href="/leermas4">Leer + </a> </span>
-					<br><br/>
-					<br><br/>
-					
-					<br><br/>
-					</div>
-
-		
-
-
-			
-
-				
-
-
-					
-
-						
-
-
-			
 	</div>
 	<br><br/>
 	<br><br/>

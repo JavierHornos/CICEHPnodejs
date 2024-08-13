@@ -1,11 +1,21 @@
 const express = require("express");
 const app = express();
 const path = require('path')
+const bodyParser = require('body-parser');
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 
-const methodOverride =  require('method-override');
+
+
+
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
+
+
+const methodOverride =  require('method-override');              // Pasar poder usar los métodos PUT y DELETE
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+
 
 const session = require('express-session');                     // express-session
 const MemoryStore = require('memorystore')(session)
@@ -36,11 +46,13 @@ app.use(express.json());
 
 
 
+
+
 const mainRoutes = require('./src/routers/mainRoutes');
 
 
 //LEVANTANDO SERVIDOR
-const PORT = process.env.PORT || 3100      
+const PORT = process.env.PORT || 3200      
 app.listen(PORT, function() {                           
    console.log(`Levantando un servidor con Express en el puerto ${PORT}`);
 })
@@ -55,16 +67,15 @@ app.set('views', './src/views');                      //views
 app.set('view engine', 'ejs')                         //ejs
 
 
+
+app.use(userLoggedMiddleware);
+
 //RUTAS
 app.use('/', mainRoutes);
 app.use('/about', mainRoutes)
 app.use('/actividades', mainRoutes)
 app.use('/publicaciones', mainRoutes)
 app.use('/investigaciones', mainRoutes)
-app.use('/leermas', mainRoutes)
-app.use('/leermas2', mainRoutes)
-app.use('/leermas3', mainRoutes)
-app.use('/leermas4', mainRoutes)
 app.use('/docencia', mainRoutes)
 
 const usersRouters = require('./src/routers/userRoutes');

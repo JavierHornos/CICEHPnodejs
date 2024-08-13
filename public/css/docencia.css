@@ -131,21 +131,29 @@
 
 
 
-	.actividades{
-		background-color: #fafafa;
-		padding-left: 20px;
-		padding-top: 20px;
+	
+
+	.actividades .box-actividades{
+		box-shadow: 0 5px 10px rgba(0,0,0,.2);
+		border-radius: 5px;
+		background-color: white;
+		text-align: center;
+		padding: 30px 20px;
+
 	}
 
-	.fotos{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		align-items: center;
-		
-		gap: 20px;
 
-		
+	.detalle-docencia{
+		width: 10em;
+		height: 2.5em;
+		background-color: orangered;
+		font-size: 0.9em;
+		border-color: transparent;
+		border-radius: 0.6em;
+		margin: 0.2em;
+		margin-bottom: 0.5em;
+		color: white;
+		cursor: pointer;
 	}
 
 
