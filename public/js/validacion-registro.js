@@ -72,8 +72,5 @@ function mostrarPassword1() {
             error.innerHTML = warnings
         } else {
             formulario.submit();
-            window.onload = function() {
-            window.location.reload();
-            };
         }
     })

@@ -102,13 +102,7 @@ document.getElementById('category').onchange = function() {
           
           
           
-                  var allowedExtensions = /(.jpg|.jpeg|.png)$/i;
-                  if (!allowedExtensions.exec(imagen.value)) {
-                      warnings += '<div class="errreg" ><i class="fa-solid fa-triangle-exclamation"></i>Asegurese que la imgen sea una extension valida. (.jpg|.jpeg|.png)</div>'
-                      entrar = true
-                      imagen.value = '';
-                      
-                    }
+                  
                   
           
                   if (entrar) {
@@ -215,8 +209,6 @@ document.getElementById('category').onchange = function() {
             fechaCrecion.style.display = "block"
             descripcion.disabled = false;
             descripcion.style.display = "block"
-            link.disabled = false;
-            link.style.display = "block"
             tituloLeerMas.disabled = false;
             tituloLeerMas.style.display = "block"
             subTituloLeerMas.disabled = false;
@@ -225,6 +217,8 @@ document.getElementById('category').onchange = function() {
             parrafoUnoLeerMas.style.display = "block"
             parrafoDosLeerMas.disabled = false;
             parrafoDosLeerMas.style.display = "block"
+            link.disabled = true;
+            link.style.display = "none"
             tema.disabled = true;
             imagen.disabled = true;
             imagen.style.display = "none";
@@ -288,15 +282,6 @@ document.getElementById('category').onchange = function() {
                   entrar = true
               }
 
-
-              if (link.value.length <= 0) {
-                warnings += '<div class="errreg" ><i class="fa-solid fa-triangle-exclamation"></i> Ingrese un link.</div>'
-                entrar = true
-            }
-            if (link.value =="") {
-                warnings += '<div class="errreg" ><i class="fa-solid fa-triangle-exclamation"></i> Debe ingresar un link.</div>'
-                entrar = true
-            }
 
 
             if (tituloLeerMas.value.length <= 0) {

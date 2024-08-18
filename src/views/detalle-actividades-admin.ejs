@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Docencia</title>
-	<link href="/css/docencia.css" rel="stylesheet">
+	<title>Detalle Publicaciones</title>
+	<link href="/css/detalle-actividades-admin.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	 <!--Iconos-->
 	 <script src="https://kit.fontawesome.com/fa3a2d0319.js" crossorigin="anonymous"></script>
@@ -67,21 +67,37 @@
 		<strong><%= investigacionDetallado.titulo %></strong>
 		<br><br/>
 		<p>
+			<%= investigacionDetallado.descripcion%></a>
 		</p>
+		<br><br/>
+
+
+		<div class="fotos">
+			<% if (investigacionDetallado.imagen && investigacionDetallado.imagen.length > 0) { %>
+			  <% for(let imagen of investigacionDetallado.imagen) { %>
+				<a href="<%=imagen%>" target="_blank">
+				  <img src="<%=imagen%>" alt="Imagen no disponible" width="50px">
+				</a>
+			  <% } %>
+			<% } else { %>
+			  <p>No hay imágenes disponibles</p>
+			<% } %>
+		  </div>
+		  
 		
-		<%= investigacionDetallado.descripcion%> <a href=<%= investigacionDetallado.link%> Target="_blank"><%= investigacionDetallado.link%> </a>
+		
 
 		<br><br/>
 		<br><br/>
 		
 				<% if (locals.isLogged) { %>
 
-			<a href="../editar-docencia/<%= investigacionDetallado.Id %>" style="align-items:center"> 
-			<input class="detalle-docencia" type="button" value="Edtiar">
+			<a href="../editar-actividades/<%= investigacionDetallado.Id %>" style="align-items:center"> 
+			<input class="detalle-publicaciones" type="button" value="Edtiar">
 			</a>
 
-			<form action="/detalle-docencia-admin/<%= investigacionDetallado.Id %>?_method=DELETE" method="POST" style="display: inline-flex" id="borrado">
-				<button type="submit" id="boton-borrado" class="detalle-docencia">ELIMINAR</button>
+			<form action="/detalle-actividades-admin/<%= investigacionDetallado.Id %>?_method=DELETE" method="POST" style="display: inline-flex" id="borrado">
+				<button type="submit" id="boton-borrado" class="detalle-publicaciones">Eliminar</button>
 			</form>
 					<% } else { %>	
 				

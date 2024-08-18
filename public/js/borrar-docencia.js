@@ -9,23 +9,27 @@ form.addEventListener("submit",function(e) {
 
    boton.addEventListener('click', function() {
 
-      
-         Swal.fire({
-         position: 'center',
-         icon: 'success',
-        title: 'Confirmación',
-         text: 'Has borrado correctamente',
-         showConfirmButton: false,
-         timer: 3000
-          });
 
-       form.submit();
-       window.onload = function() {
-         window.location.reload();
-     };
-      
-  });
-                
+
+    Swal.fire({
+      title: "Estas seguro?",
+      text: "Vas a borrar esta publicacion!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, Borrar!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Borrado!",
+          text: "Borrado",
+          icon: "success"
+        });
+        form.submit();
+        }
+      });
+    });         
  });
 
 

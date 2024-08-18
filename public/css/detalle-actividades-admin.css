@@ -130,13 +130,6 @@
 	/*Fin de Menù lateral*/
 
 
-
-	.actividades{
-		background-color: #fafafa;
-		padding-left: 20px;
-		padding-top: 20px;
-	}
-
 	.fotos{
 		display: flex;
 		flex-direction: row;
@@ -149,7 +142,19 @@
 		
 	}
 
-	.detalle-docencia{
+
+
+	.actividades .box-actividades{
+		box-shadow: 0 5px 10px rgba(0,0,0,.2);
+		border-radius: 5px;
+		background-color: white;
+		text-align: center;
+		padding: 30px 20px;
+
+	}
+
+	
+	.detalle-publicaciones{
 		width: 10em;
 		height: 2.5em;
 		background-color: orangered;
@@ -158,10 +163,12 @@
 		border-radius: 0.6em;
 		margin: 0.2em;
 		margin-bottom: 0.5em;
-		margin-left: 50%;
 		color: white;
 		cursor: pointer;
 	}
+
+
+
 
 
 /*:::::Pie de Pagina*/
@@ -170,7 +177,6 @@
 	margin-bottom: 0px;
 	width: 127px !important
 }
-
 
 .pie-pagina{
     width: 100%;

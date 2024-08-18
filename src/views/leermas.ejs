@@ -78,6 +78,18 @@
 
 		<p> <%= investigacionDetallado.parrafoDosLeerMas %> </p>
 		<br><br/>
+		<% if (locals.isLogged) { %>
+
+			<a href="../editar-investigaciones/<%= investigacionDetallado.Id %>" style="align-items:center"> 
+			<input class="detalle-publicaciones" type="button" value="Edtiar">
+			</a>
+
+			<form action="/leermas/<%= investigacionDetallado.Id %>?_method=DELETE" method="POST" style="display: inline-flex" id="borrado">
+				<button type="submit" id="boton-borrado" class="detalle-publicaciones">Eliminar</button>
+			</form>
+					<% } else { %>	
+				
+						<% } %>
 		<br><br/>
 		</div>
 
@@ -121,7 +133,9 @@
 
 
 
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/borrar-docencia.js"></script>
 
 
 </body>

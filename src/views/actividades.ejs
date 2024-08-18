@@ -83,6 +83,16 @@
 		  <p>No hay imágenes disponibles</p>
 		<% } %>
 	  </div>
+	  <br><br/>
+	 
+	  <% if (locals.isLogged) { %>
+
+		<a href="./detalle-actividades-admin/<%= p.Id %>" style="align-items:center"> 
+		<input class="detalle-docencia" type="button" value="Detalle">
+		</a>
+				<% } else { %>	
+			
+					<% } %>
 
 	   <br><br/>
 	   <hr><hr/>

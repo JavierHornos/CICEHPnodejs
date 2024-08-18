@@ -163,6 +163,20 @@
 
 	}
 
+	.detalle-publicaciones{
+		width: 10em;
+		height: 2.5em;
+		background-color: orangered;
+		font-size: 0.9em;
+		border-color: transparent;
+		border-radius: 0.6em;
+		margin: 0.2em;
+		margin-bottom: 0.5em;
+		color: white;
+		cursor: pointer;
+	}
+
+
 
 
 /*:::::Pie de Pagina*/

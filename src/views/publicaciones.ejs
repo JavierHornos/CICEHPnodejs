@@ -76,6 +76,14 @@
 		</p>
 		
 		<br><br/>
+		<% if (locals.isLogged) { %>
+
+			<a href="./detalle-publicaciones-admin/<%= p.Id %>" style="align-items:center"> 
+			<input class="detalle-publicaciones" type="button" value="Detalle">
+			</a>
+					<% } else { %>	
+				
+						<% } %>
 		
 		<br><br/>
 		<hr><hr/>
